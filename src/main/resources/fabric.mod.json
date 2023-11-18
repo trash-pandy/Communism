@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "communism",
+  "version": "${version}",
+  "name": "Communism",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/Evan/Communism"
+  },
+  "license": "unlicense",
+  "icon": "assets/communism/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "server": [
+      "it.trashband.communism.Communism"
+    ]
+  },
+  "mixins": [
+    "communism.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
