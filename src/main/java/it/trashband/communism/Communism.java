@@ -2,11 +2,6 @@ package it.trashband.communism;
 
 import net.fabricmc.api.DedicatedServerModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.level.storage.DimensionDataStorage;
-
-import java.util.Optional;
 
 public class Communism implements DedicatedServerModInitializer
 {
