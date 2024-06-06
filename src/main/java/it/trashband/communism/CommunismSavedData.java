@@ -1,9 +1,11 @@
 package it.trashband.communism;
 
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.level.saveddata.SavedData;
+import org.jetbrains.annotations.NotNull;
 
 public class CommunismSavedData extends SavedData
 {
@@ -14,16 +16,16 @@ public class CommunismSavedData extends SavedData
 			CommunismSavedData::new, CommunismSavedData::load, null);
 	}
 
-	public static CommunismSavedData load(CompoundTag compoundTag) {
+	public static CommunismSavedData load(CompoundTag compoundTag, HolderLookup.Provider provider) {
 		var data = new CommunismSavedData();
-		ContainerHelper.loadAllItems(compoundTag, data.globalContainer.items);
+		ContainerHelper.loadAllItems(compoundTag, data.globalContainer.items, provider);
 		return data;
 	}
 
 	@Override
-	public CompoundTag save(CompoundTag compoundTag)
+	public @NotNull CompoundTag save(CompoundTag compoundTag, HolderLookup.Provider provider)
 	{
-		ContainerHelper.saveAllItems(compoundTag, globalContainer.items);
+		ContainerHelper.saveAllItems(compoundTag, globalContainer.items, provider);
 		return compoundTag;
 	}
 }

@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(EnderChestBlock.class)
 public class EnderChestBlockMixin
 {
-	@Redirect(method = "use", at = @At(value = "NEW", target = "(Lnet/minecraft/world/inventory/MenuConstructor;Lnet/minecraft/network/chat/Component;)Lnet/minecraft/world/SimpleMenuProvider;"))
+	@Redirect(method = "useWithoutItem", at = @At(value = "NEW", target = "(Lnet/minecraft/world/inventory/MenuConstructor;Lnet/minecraft/network/chat/Component;)Lnet/minecraft/world/SimpleMenuProvider;"))
 	SimpleMenuProvider a(MenuConstructor menuConstructor, Component title) {
 		return new SimpleMenuProvider((i, inventory, player) ->
 			ChestMenu.threeRows(i, inventory, Communism.data.globalContainer), title);
