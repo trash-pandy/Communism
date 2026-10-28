@@ -10,7 +10,7 @@
   },
   "license": "unlicense",
   "icon": "assets/communism/icon.png",
-  "environment": "*",
+  "environment": "server",
   "entrypoints": {
     "server": [
       "it.trashband.communism.Communism"

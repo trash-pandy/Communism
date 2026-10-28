@@ -4,9 +4,11 @@
   "package": "it.trashband.communism.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "EnderChestBlockMixin"
   ],
   "client": [
+  ],
+  "server": [
+    "EnderChestBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
